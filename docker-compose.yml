@@ -1,0 +1,12 @@
+services:
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_ROOT_TSL_AUTH: true
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db:/data/db
