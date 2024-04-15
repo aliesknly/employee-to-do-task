@@ -1,8 +1,4 @@
-import { Button } from '@mui/material';
-import styles from './page.module.css';
-
-
-
+import { NextUi } from '@libs/next-ui';
 export default function Index() {
   /*
    * Replace the elements below with your own.
@@ -10,6 +6,8 @@ export default function Index() {
    * Note: The corresponding styles are in the ./index.css file.
    */
   return (
-    <Button variant='contained' color='primary'>Holla</Button>
+    <>
+      <NextUi />
+    </>
   );
 }

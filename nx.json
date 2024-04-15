@@ -1,7 +1,14 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "workspaceLayout": {
+    "appsDir": "apps",
+    "libsDir": "libs"
+  },
   "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
     "production": [
       "default",
       "!{projectRoot}/cypress/**/*",
@@ -63,6 +70,9 @@
         "style": "css",
         "linter": "eslint"
       }
+    },
+    "@nx/react": {
+      "library": {}
     }
   },
   "nxCloudAccessToken": "Y2VlYjNlOTEtMmU1Ni00MGRkLWFmYmEtZTAyMTE4ZGRiYjExfHJlYWQtd3JpdGU="
