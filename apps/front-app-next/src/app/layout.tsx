@@ -1,10 +1,11 @@
 import './global.css';
 import { theme } from '../config/theme';
-import { CssBaseline, ThemeProvider } from '@mui/material';
+import { Container, CssBaseline, ThemeProvider } from '@mui/material';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import { MenuAppBar } from '@libs/next-ui/components';
 
 export const metadata = {
   title: 'Welcome to front-app-next',
@@ -21,7 +22,8 @@ export default function RootLayout({
       <body>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          {children}
+          <MenuAppBar />
+          <Container fixed>{children}</Container>
         </ThemeProvider>
       </body>
     </html>

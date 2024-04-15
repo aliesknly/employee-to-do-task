@@ -1,4 +1,4 @@
-import { NextUi } from '@libs/next-ui';
+import { ButtonLink } from '@libs/next-ui/components';
 export default function Index() {
   /*
    * Replace the elements below with your own.
@@ -7,7 +7,7 @@ export default function Index() {
    */
   return (
     <>
-      <NextUi />
+     <ButtonLink href="/dashboard">Dashboard</ButtonLink>
     </>
   );
 }
