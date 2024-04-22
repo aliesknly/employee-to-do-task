@@ -3,7 +3,6 @@ import mongoose from 'mongoose';
 const URI = `${process.env.DB_PROTOCOL}://${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
 
 export async function MongoDBConnect() {
-  console.log(URI);
   await mongoose
     .connect(URI, {
       authSource: 'admin',

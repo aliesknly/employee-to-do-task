@@ -1,4 +1,4 @@
-import { ButtonLink } from '@libs/next-ui/components';
+import { Typography } from '@mui/material';
 export default function Index() {
   /*
    * Replace the elements below with your own.
@@ -7,7 +7,9 @@ export default function Index() {
    */
   return (
     <>
-     <ButtonLink href="/dashboard">Dashboard</ButtonLink>
+      <Typography variant="h4" gutterBottom>
+        Home
+      </Typography>
     </>
   );
 }
