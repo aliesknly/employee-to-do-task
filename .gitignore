@@ -46,3 +46,4 @@ out
 
 data
 .yarn*
+apps/express-api/.env

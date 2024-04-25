@@ -1,7 +1,7 @@
 {
-  "name": "back-express",
+  "name": "express-api",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/back-express/src",
+  "sourceRoot": "apps/express-api/src",
   "projectType": "application",
   "tags": [],
   "targets": {
@@ -9,14 +9,16 @@
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "back-express:build"
+        "buildTarget": "express-api:serve",
+        "watch": true
       },
       "configurations": {
         "development": {
-          "buildTarget": "back-express:build:development"
+          "buildTarget": "express-api:build:development",
+          "watch": true
         },
         "production": {
-          "buildTarget": "back-express:build:production"
+          "buildTarget": "express-api:build:production"
         }
       }
     }
