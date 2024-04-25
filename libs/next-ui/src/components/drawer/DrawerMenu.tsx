@@ -1,14 +1,18 @@
 'use client';
 import { Drawer, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 
-export interface DrawerProps {
-    children: React.ReactNode;
-    isOpen: boolean;
-    toggleDrawer: (openStatus: boolean) => void;
+type DrawerProperties = {
+  isOpen: boolean;
+  toggleDrawer: (openStatus: boolean) => void;
+};
+type ChildrenFunction = (props: DrawerProperties) => ReactNode;
+
+interface DrawerMenuProps {
+  children: ChildrenFunction | ReactNode;
 }
-export function DrawerMenu(props: DrawerProps) {
+export function DrawerMenu({ children }: DrawerMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = (openStatus: boolean) => {
     setIsOpen(openStatus);
@@ -26,7 +30,9 @@ export function DrawerMenu(props: DrawerProps) {
         <MenuIcon />
       </IconButton>
       <Drawer open={isOpen} onClose={() => toggleDrawer(false)}>
-        {props.children}
+        {typeof children === 'function'
+          ? children({ isOpen, toggleDrawer })
+          : children}
       </Drawer>
     </>
   );

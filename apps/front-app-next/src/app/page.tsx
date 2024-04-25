@@ -8,7 +8,7 @@ export default function Index() {
   return (
     <>
       <Typography variant="h4" gutterBottom>
-        Home
+        Home Aqui
       </Typography>
     </>
   );

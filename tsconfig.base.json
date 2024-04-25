@@ -18,7 +18,7 @@
       "@libs/next-ui": ["libs/next-ui/src/index.ts"],
       "@libs/next-ui/components": ["libs/next-ui/src/components/index.ts"],
       "@libs/next-ui/common": ["libs/next-ui/src/common/index.ts"],
-      "@libs/next-ui/server": ["libs/next-ui/src/server.ts"]
+      "@libs/next-ui/server": ["libs/next-ui/src/server.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

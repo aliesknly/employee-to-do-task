@@ -2,7 +2,6 @@
 
 import {
   Box,
-  Divider,
   List,
   ListItem,
   ListItemButton,
@@ -11,12 +10,12 @@ import {
 } from '@mui/material';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import { withDrawerMenu } from '@libs/next-ui/components';
-export const MenuList = ({
-  toggleDrawer,
-}: {
-  toggleDrawer: (openStatus: boolean) => void;
-}) => {
+import { DrawerProps, withDrawerMenu } from '@libs/next-ui/components';
+import Link from 'next/link';
+import { MODULES_ROUTE, RoutesType } from '../../common';
+import { FC } from 'react';
+
+export const MenuList: FC<DrawerProps> = ({ toggleDrawer }) => {
   return (
     <Box
       sx={{ width: 250 }}
@@ -24,26 +23,13 @@ export const MenuList = ({
       onClick={() => toggleDrawer(false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
+        {MODULES_ROUTE.map((route: RoutesType, index) => (
+          <ListItem key={route.name} disablePadding>
+            <ListItemButton component={Link} href={route.path}>
               <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
               </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={route.label} />
             </ListItemButton>
           </ListItem>
         ))}
