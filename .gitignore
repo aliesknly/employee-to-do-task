@@ -45,5 +45,6 @@ Thumbs.db
 out
 
 data
-.yarn*
 apps/express-api/.env
+pnpm-lock.yaml
+.yarnrc
